@@ -1,0 +1,6 @@
+#  The initial function produces an error, due to the use of variables which do not exist. By replacing all variables with "assignment 2":
+myMean <- function(assignment2) {
+  return(sum(assignment2) / length(assignment2))
+}
+# The corrected formula outputs a mean of 19.25
+# https://rprogrammingjournal12.blogspot.com/2026/01/assignment-2.html
