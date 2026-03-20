@@ -1,0 +1,32 @@
+library(lattice)
+library(ggplot2)
+
+data("Affairs", package = "AER")
+head(Affairs)
+
+plot(Affairs$age, Affairs$affairs,
+     main   = "Base: x vs. y",
+     xlab   = "age",
+     ylab   = "affairs")
+
+hist(Affairs$yearsmarried,
+     main   = "Distribution of years married",
+     xlab   = "years")
+
+xyplot(affairs ~ age | factor(children),
+       data = Affairs,
+       main = "amount of affairs per age grouped by having children")
+
+bwplot(yearsmarried ~ factor(religiousness),
+       data = Affairs,
+       main = "years married by religious level")
+
+ggplot(Affairs, aes(x = religiousness, y = yearsmarried, color = factor(children))) +
+  geom_point() +
+  geom_smooth(method = "lm") +
+  labs(title = "ggplot2: years married per religious level grouped by having children")
+
+ggplot(Affairs, aes(education)) +
+  geom_histogram(binwidth = 1) +
+  facet_wrap(~ gender) +
+  labs(title = "education level by gender")
