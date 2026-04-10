@@ -1,0 +1,37 @@
+---
+title: "My Markdown Primer"
+author: "Ben"
+date: "July 10, 2014"
+output: html_document
+---
+
+---
+
+An R markdown file is a file that combines text based elements with chunks of code, dividing
+them into separate sections which can be compiled into on html document.
+
+---
+
+```{r setup, message = FALSE}
+
+data(mtcars)
+
+```
+---
+
+The mtcars data set is loaded, and the cyl is plotted against the mpg. 
+
+---
+```{r}
+
+plot(mtcars$mpg, mtcars$cyl)
+
+```
+
+$\\alpha + \\beta = \\gamma$
+
+---
+
+Overall, R markdown is a simple way to write a report with the code integrated into the text, allowing for more clear and easy to follow projects. I would say I prefer using R markdown files over regular reports, due to the increased visual clarity they provide, with minimal additional effort required.
+---
+
